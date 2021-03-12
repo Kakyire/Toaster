@@ -1,16 +1,22 @@
 package com.kakyiretechnologies.toaster
 
-import android.content.Context
 import android.widget.Toast
+import androidx.fragment.app.FragmentActivity
 
-class Toaster {
-    companion object {
-        fun longToast(context: Context, message: String) {
-            Toast.makeText(context, message, Toast.LENGTH_LONG).show()
-        }
+private const val SOMETHING_WENT_WRONG = "Something went wrong. Try again"
 
-        fun shortToast(context: Context, message: String) {
-            Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
-        }
-    }
+fun FragmentActivity.longToast(message: String) {
+    Toast.makeText(this, message, Toast.LENGTH_LONG).show()
 }
+
+fun FragmentActivity.shortToast(message: String) {
+    Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+}
+
+fun FragmentActivity.errorToast() {
+    Toast.makeText(this, SOMETHING_WENT_WRONG, Toast.LENGTH_SHORT).show()
+}
+
+
+
+
